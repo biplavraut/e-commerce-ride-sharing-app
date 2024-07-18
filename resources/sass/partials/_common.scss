@@ -1,0 +1,32 @@
+@import "mixins";
+
+.asdh-center_image_inside_me {
+  width    : 100px;
+  height   : 100px;
+  position : relative;
+  overflow : hidden;
+  display  : block;
+  img {
+    position : absolute;
+    width    : 100%;
+  }
+}
+
+.asdh-alert-message {
+  display  : none;
+  position : fixed;
+  width    : auto;
+  top      : 15px;
+  right    : 15px;
+  z-index  : 9999;
+  opacity  : 0.9;
+  &.hide-after-some-seconds {
+    display : block;
+  }
+}
+
+[v-cloak] { display : none; }
+
+.cursor-pointer {
+  cursor : pointer !important;
+}

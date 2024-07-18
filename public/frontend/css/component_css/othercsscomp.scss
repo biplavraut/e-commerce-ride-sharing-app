@@ -1,0 +1,252 @@
+@import './header';
+@import './footer';
+
+@mixin nextslick{
+	.slick-arrow{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 16px;
+		fill:rgba($para, 0.8);
+
+		svg{
+			transform: translateY(1px);
+		}
+		bottom:auto;
+		top: -26px;
+		right: 10px;
+		svg{
+			margin-right: 10px;
+		}
+		&.slick-next{
+			right: -10px;
+			svg{
+				margin-right: 0;
+				margin-left: 10px;
+			}
+		}
+	}
+}
+@mixin newbr{
+	border-radius:20px;
+}
+@mixin commonp{
+	padding: 30px;
+}
+@mixin dropdown{
+	border:0;
+	@include box-shadow;
+	@include newbr;
+	font-size: 14px;
+	width: max-content;
+	overflow: hidden;
+	padding: 17px 12px;
+
+	.nav{
+		align-items: flex-start;
+
+	}
+	.nav-item{
+		text-align: left;
+		width: 100%;
+	}
+	.nav-link{
+		margin: 0;
+		padding: 12px 23px;
+		@include newbr;
+		&:hover{
+			background-color:$white;
+			color: $primary-color;
+			svg, path{
+				fill:$primary-color;
+			}
+		}
+		svg{
+			height: 18px;
+			margin-right: 4px;
+		}
+
+	}
+}
+
+.common__page{
+	.screen{
+		.section__rule{
+			padding-top: 30px;
+		}
+		
+	}
+	aside{
+		&.left{
+			width: 235px;
+			background-color:#fff;
+		}
+		&.right{
+			width: calc(100% - 235px);
+			padding:25px;
+			main{
+				&> .row{
+					margin: 0 -15px;
+				}
+			}
+		}
+	}
+	.banner{
+		img{
+			width: 100%;
+			height: auto;
+			@include border-radius;
+			overflow: hidden;
+		}
+	}
+	.sticky {
+		position: sticky;
+		top: 15px;
+		// @include card__margin;
+	}
+	
+	.side__content{
+		width: 330px;
+		// height: 1000px;
+		// background-color: #fff;
+		min-width: 330px;
+		padding-top: 10px;
+	}
+	main> .wrapper{
+		background-color:#fff;
+		@include newbr;
+		@include commonp;
+	}
+	hr{
+		border-top: 2px solid rgba(78, 78, 78, 0.05);
+		opacity: 1;
+	}
+	.card__intro{
+		display: flex;
+		align-items: center;
+		.card__img{
+			background-image: linear-gradient(180deg, #F5FDFF 0%, #D2F4FF 100%);
+			border: 1px solid #D3F5FF;
+			@include newbr;
+			padding: 20px;
+			height: 90px;
+			width: 90px;
+			margin-right: 20px;
+			img{
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+
+		}
+		.section__title{
+			margin-bottom: 4px;
+		}
+		.small__title{
+			color: $para;
+			margin-bottom: 0;
+			font-size: 14px;
+		}
+		.nav.sec{
+			margin-left: auto;
+		}
+		
+	}
+	.progress{
+		height: 5px;
+		border-radius:10px;
+		background-color: rgba($primary-color, 0.05);
+		.progress-bar {
+			background-color: $primary-color;
+			border-radius:10px;
+		}
+	}
+}
+.breadcrumb{
+	color: $para;
+	background-color: transparent;
+	padding: 0;
+	@include card__margin;
+}
+
+
+@mixin input{
+	height: 56px;
+	font-size: 16px;
+	color: $dark;
+	box-shadow: none;
+	outline: none;
+	border:1px solid rgba($para, 0.6);
+	@include border-radius;
+	&:focus, &:focus-within, &.active{
+		// border-color:$primary-color;
+	}
+	@include responsivemmd{
+		height: 52px;
+		padding:0 14px;
+	}
+	
+	&::placeholder{
+		font-weight: 400;
+	}
+}
+@mixin free{
+	.free{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.tag{
+			background-color: #FEEFE8;
+			padding: 5px 10px;
+			border-radius: 10px;
+			// border: 1px solid #F26522;
+			border:none;
+			font-size: 12px;
+			font-weight: 500;
+			color: $para;
+			box-shadow: none !important;
+			transform:none !important;
+			&.paid{
+				&:hover{
+					background-color: $primary-color;
+					color: #ffff;
+				}
+			}
+		}
+	}
+}
+a.active{
+	color: $primary-color;
+}
+
+
+.transform-none{
+	transform:none !important;
+}
+
+
+mark.tag{
+	background-color: #FFFEFA;
+	padding: 10px;
+	border-radius: 15px;
+	border: 1px solid #EBBA16;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	font-size: 14px;
+	font-weight: 400;
+	color: $para;
+	svg{
+		padding-right: 6px;
+		width: 30px;
+	}
+}
+
+@mixin noselect{
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+    supported by Chrome, Edge, Opera and Firefox */
+}

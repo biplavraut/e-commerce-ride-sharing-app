@@ -1,0 +1,849 @@
+@import "./component_css/header";
+
+/* --------------------------------------------------------
+version: build
+last modified: 7.March.2020 by anjit
+author: Anjit Pariyar	
+email: anjitpariyar@gmail.com
+github: https://github.com/anjitzero
+----------------------------------------------------------*/
+
+.screen {
+  text-align: center;
+  background-color: #fff;
+  position: relative;
+  .item {
+    height: calc(100vh - 100px);
+    position: relative;
+    overflow: hidden;
+    @include responsivemd {
+      max-height: 600px;
+      height: calc(100vh - 200px);
+    }
+    img {
+      @include image;
+      width: 1920px;
+      object-position: center bottom;
+      @include responsivelg {
+        width: 1324px;
+      }
+      @include responsivemd {
+        width: 1100px;
+      }
+      @include responsivemmd {
+        width: 660px;
+      }
+    }
+  }
+  .absolute__content {
+    position: absolute;
+    height: min-content;
+    width: 100%;
+    max-width: 900px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .title__description {
+      color: $dark;
+      font-weight: 500px;
+    }
+
+    .download__button {
+      a:first-child {
+        margin-right: 12px;
+      }
+    }
+  }
+  .absolute__content.download__app {
+    top: 30px;
+    transform: translate(10%, 0%);
+    width: auto;
+    @include responsive(1290px) {
+      transform: translate(0%, 0%);
+    }
+    @include responsive(1112px) {
+      width: auto;
+      right: 5%;
+      left: auto;
+    }
+    @include responsivemmd {
+      width: 100%;
+      flex-wrap: wrap;
+      position: relative;
+      margin-bottom: 5px;
+      margin-top: 0;
+      top: 10px;
+    }
+    aside {
+      @include responsivemmd {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+.about-us {
+  position: relative;
+  padding-top: 100px;
+  @include responsivemd {
+    padding-top: 30px;
+  }
+  @include responsivemmd {
+    padding-top: 10px;
+  }
+  @include responsivemin(769px) {
+    text-align: center;
+  }
+  .section__rule {
+    position: relative;
+    padding: 0;
+  }
+  .absolute__content {
+    background-color: rgba($secondary-color, 0.8);
+
+    padding: 100px;
+    @include responsivemd {
+      padding: 40px;
+    }
+    @include responsivemmd {
+      padding: 20px;
+    }
+  }
+  .para {
+    opacity: 0;
+    color: $dark;
+    @include responsivemd {
+      opacity: 1;
+    }
+  }
+  .video__absolute {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    @include responsivemd {
+      display: none;
+    }
+  }
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.service {
+  @include card;
+  @include article;
+  @include scrollOut;
+  article {
+    margin: 30px 0;
+  }
+  .card {
+    padding-top: 50px;
+    text-align: center;
+    @include responsivemd {
+      opacity: 1;
+    }
+    @include responsivemmd {
+      padding-top: 20px;
+    }
+    .card__img {
+      height: 80px;
+      margin-bottom: 20px;
+      img {
+        width: auto;
+        object-fit: contain;
+        margin: auto;
+      }
+      @include responsivemmd {
+        margin-bottom: 20px;
+      }
+    }
+    .card__title {
+      margin-bottom: 20px;
+    }
+    &:hover {
+      .card__img {
+        height: 50px;
+      }
+    }
+  }
+  @include slicknav;
+  .slick-track {
+    margin-left: 0;
+  }
+  .slick-list {
+    margin: 0 -10px;
+    margin-bottom: 15px;
+    article {
+      padding: 0 10px;
+    }
+  }
+
+  .section__title {
+    @include responsivemin(769px) {
+      text-align: center;
+    }
+  }
+
+  .title__description {
+    @include responsivemin(769px) {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+  }
+
+  .slick-track {
+    @include responsivemin(769px) {
+      margin-left: auto;
+    }
+  }
+
+  .carousel {
+    margin-bottom: 50px;
+    @include responsivemd {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+// .live{
+// 	@include slicknav;
+// 	.slick-list{
+// 		margin: 0 -10px;
+// 		margin-bottom: 15px;
+// 		article{
+// 			padding: 0 10px;
+// 		}
+// 	}
+// }
+
+.app {
+  .img {
+    padding: 0 60px;
+    text-align: center;
+    @include responsive(1112px) {
+      padding: 0;
+      @include card__margin;
+    }
+    img {
+      height: 500px;
+      width: auto;
+      @include card__margin;
+      @include responsivemd {
+        width: 100%;
+        height: 400px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .card__title {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    // cursor: crosshair;
+    // cursor: pointer;
+    &:hover {
+      color: $primary-color;
+    }
+    @include responsivemd {
+      margin-bottom: 20px;
+    }
+    @include responsivemmd {
+      font-size: 18px;
+    }
+    &:not(.card__title--sm) {
+      @include responsivemmd {
+        display: list-item;
+        // list-style: symbols;
+        margin-left: 1em !important;
+      }
+    }
+    &:nth-child(2) {
+      margin: 60px 0;
+      @include responsivemd {
+        margin: 20px 0;
+      }
+    }
+  }
+
+  @include scrollOut;
+
+  .download__app {
+    @include responsivemd {
+      justify-content: flex-start;
+    }
+    .card__title {
+      margin-bottom: 20px;
+      @include responsivesm {
+        min-height: 45px;
+      }
+    }
+  }
+
+  .d-flex {
+    @include responsivemd {
+      flex-wrap: wrap;
+    }
+  }
+
+  .center.col-lg-6 {
+    @include responsivemd {
+      // display: none;
+      order: -1;
+    }
+  }
+
+  .text__wrapper.center {
+    @include responsivemd {
+      text-align: left;
+    }
+  }
+
+  aside {
+    @include responsivemmd {
+      padding: 0;
+    }
+  }
+
+  .clipping--image {
+    position: absolute;
+    // width: 219px;
+    top: 42px;
+    left: 50%;
+    overflow: hidden;
+    height: 435px;
+    border-radius: 0px;
+    transform: translateX(-50%);
+    @include responsive(1300px) {
+      left: calc(50% + 18px);
+    }
+    @include responsive(1112px) {
+      left: calc(50% + 0px);
+    }
+    @include responsive(1030px) {
+      left: calc(50% + 16px);
+    }
+    @include responsivemd {
+      top: 66px;
+      height: 277px;
+      left: calc(50% + 0px);
+    }
+    img {
+      @include image;
+      object-fit: contain;
+      background-color: transparent;
+    }
+  }
+}
+
+.features {
+  @include card;
+  @include article;
+  @include scrollOut;
+
+  article {
+    // margin-bottom: 30px;
+  }
+  .card {
+    padding-top: 50px;
+    text-align: center;
+    // opacity: 1;
+    @include responsivemd {
+      padding-top: 20px;
+    }
+    .card__img {
+      height: 150px;
+      width: 150px;
+      margin: auto;
+      margin-bottom: 45px;
+      padding: 45px;
+      background-color: #fefbf4;
+      position: relative;
+      overflow: visible;
+      @include responsivemmd {
+        height: 70px;
+        width: 70px;
+        padding: 14px;
+        margin-bottom: 20px;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        border: 2px solid #f8c245;
+        top: -10px;
+        left: -10px;
+        height: 170px;
+        width: 170px;
+        border-radius: 50%;
+        @include responsivemmd {
+          height: 80px;
+          width: 80px;
+          top: -5px;
+          left: -5px;
+        }
+      }
+      img {
+        object-fit: contain;
+      }
+    }
+    .card__title {
+      margin-bottom: 0px;
+    }
+    .card__body {
+      @include nomt;
+    }
+  }
+  @include cardhr--scroll(835px);
+
+  .row {
+    & > article {
+      @include responsivemd {
+        padding: 10px;
+      }
+      @include responsivemd {
+        flex-basis: 70%;
+      }
+    }
+  }
+}
+
+.gogocares {
+  .img {
+    height: 100vh;
+    max-height: 620px;
+    background-image: url("../gallery/bgscreen01.png");
+    background-color: rgba(29, 161, 243, 0.1);
+    background-attachment: fixed;
+    padding: 60px 0;
+    @include responsivemd {
+      max-height: 550px;
+    }
+    @include responsivemmd {
+      // height: 30vh;
+      padding: 15px;
+    }
+
+    img {
+      @include image;
+      object-fit: contain;
+    }
+  }
+  aside {
+    .text__wrapper {
+      padding: 0 calc(100% - 650px);
+      font-size: 18px;
+      color: $para;
+      @include responsive(1295px) {
+        padding: 0 60px;
+      }
+      @include responsivemd {
+        padding: 0 40px;
+      }
+      @include responsivemmd {
+        font-size: 16px;
+        padding: 0 20px;
+      }
+    }
+    &.left,
+    &.right {
+      @include responsivemmd {
+        // display: none;
+      }
+    }
+    &:nth-child(3),
+    &:nth-child(8) {
+      @include responsivemmd {
+        // margin: 20px 0;
+        // background-color: rgba(29, 161, 242, 0.1);
+        padding: 25px 0;
+      }
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1em;
+    li {
+      position: relative;
+      padding: 6px;
+      list-style: none;
+      // &::marker{
+      // 	color: $green;
+
+      // }
+      &:before {
+        content: "";
+        position: absolute;
+        height: 18px;
+        width: 18px;
+        border: 2px solid $green;
+        border-radius: 50%;
+        left: -21.5px;
+        top: 50%;
+        transform: translateY(-50%);
+        @include responsivemmd {
+          top: 20px;
+        }
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        background: $green;
+        border-radius: 50%;
+        left: -16.5px;
+        top: 50%;
+        transform: translateY(-50%);
+        @include responsivemmd {
+          top: 20px;
+        }
+      }
+    }
+  }
+  button {
+    @include button;
+    @include mt;
+  }
+  @include scrollOut;
+  .text__wrapper.center {
+    @include responsivemmd {
+      text-align: left;
+      @include section-style;
+    }
+  }
+}
+
+.green {
+  @include card;
+  @include card-hr;
+  @include article;
+  @include scrollOut;
+  .row > article {
+    padding: 10px;
+    @include responsivemmd {
+      scroll-snap-align: start;
+    }
+  }
+  .card__hr {
+    align-items: center;
+    border: 1px solid #e8e8e8;
+    padding: 20px;
+    .card__title {
+      font-weight: 700;
+      color: $para;
+    }
+    .card__img {
+      margin-right: 12px;
+      height: 50px;
+      img {
+        object-fit: contain;
+      }
+    }
+    .para {
+      @include noh;
+    }
+    .card__body {
+      @include nomt;
+    }
+    @include responsivemmd {
+      padding: 12px;
+    }
+  }
+  .row {
+    @include responsivemmd {
+      @include scrollbar;
+      justify-content: flex-start !important;
+    }
+  }
+}
+
+.company--colab {
+  background-color: #f9f9f9;
+  .title__description {
+    color: $para;
+  }
+  .nav {
+    width: 100%;
+    max-width: 880px;
+    text-align: center;
+    margin: auto;
+    border-bottom: 2px solid #e8e8e8;
+    margin-bottom: 40px;
+    @include scrollbar;
+  }
+  .card__title {
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 700;
+    margin: 0;
+    color: $para;
+    border: 0;
+    background-color: transparent;
+    padding: 24px 14px;
+    &.active {
+      color: $primary-color;
+    }
+  }
+  .tab-content {
+    .d-flex {
+      text-align: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 70%;
+      margin: 0 auto;
+      @include responsivemmd {
+        @include scrollbar;
+        justify-content: center;
+      }
+
+      img {
+        height: 65px;
+        width: auto;
+        object-fit: contain;
+        filter: grayscale(1);
+        margin: 0 24px;
+        margin-bottom: 24px;
+        transform: translate3d(0, 0, 0);
+        transition: none;
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        &:hover {
+          mix-blend-mode: normal;
+          filter: grayscale(0);
+        }
+        @include responsivemmd {
+          height: 50px;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}
+
+.testimonials {
+  .bg__wrapper {
+    position: relative;
+    perspective: 1000px;
+    padding: 100px 0 0 100px;
+    @include responsivemd {
+      padding: 60px 0 0 60px;
+    }
+    @include responsivemmd {
+      padding: 20px 0 0 10px;
+    }
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 80%;
+      width: 100%;
+      background-color: #edf7fe;
+      content: "";
+      @include border-radius;
+      transform: rotateY(13deg);
+      transform-origin: left center;
+    }
+  }
+  img {
+    @include image;
+  }
+  .image {
+    height: 500px;
+    min-width: 450px;
+    width: 450px;
+    max-width: 100%;
+    @include border-radius;
+    overflow: hidden;
+    @include responsivelg {
+      min-width: 350px;
+      width: 350px;
+    }
+    @include responsivemd {
+      min-width: 300px;
+      width: 300px;
+      height: 400px;
+    }
+    @include responsivemmd {
+      position: absolute;
+      height: 60px;
+      width: 60px;
+      min-width: 60px;
+      bottom: 20px;
+    }
+  }
+  @include card;
+  .slick-active {
+    .card {
+      // border-color: 3px solid $secondary-color;
+      background-color: $secondary-color;
+      transition: 1s linear;
+    }
+  }
+  .card {
+    border: 3px solid $secondary-color;
+    background-color: #fff;
+    overflow: hidden;
+    transition: 1s linear;
+    text-align: center;
+    .card__img {
+      background-color: transparent !important;
+      position: absolute;
+      height: 100px;
+      width: auto;
+      bottom: -20px;
+      margin: 0;
+      left: -10px;
+      opacity: 0.7;
+      z-index: -1;
+      img {
+        object-fit: contain;
+        object-position: bottom;
+      }
+    }
+    .card__title {
+      @include card__margin;
+      color: #222;
+    }
+  }
+  .right {
+    padding-top: 60px;
+    @include transition-in;
+    @include responsivemd {
+      min-width: calc(100% - 250px);
+    }
+    @include responsivemmd {
+      padding-top: 0px;
+      transform: none !important;
+    }
+  }
+
+  .float-widget {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    background-color: #1da1f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #edf7fe;
+    margin-top: -20px;
+    margin-left: auto;
+    border: 5px solid #fff;
+    animation: float 6s linear 3s infinite alternate;
+    z-index: 9;
+    position: relative;
+    @include responsivemmd {
+      height: 100px;
+      width: 100px;
+    }
+  }
+  @include slickdots;
+  @include slicknav;
+
+  .slick-active {
+    .right {
+      transform: translateX(-60px);
+    }
+  }
+  .d-flex {
+    @include responsivemmd {
+      position: relative;
+      padding-bottom: 20px;
+    }
+  }
+  .item {
+    @include responsivemmd {
+      padding: 0 10px;
+    }
+  }
+}
+
+.faq {
+  .card__title {
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: $para;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 2px solid #e8e8e8;
+    padding: 24px 0;
+    @include responsivemmd {
+      font-size: 18px;
+      padding: 14px 0;
+    }
+    &.collapsed {
+      span:last-child {
+        display: none;
+      }
+    }
+    &:not(.collapsed) {
+      span:first-child {
+        display: none;
+      }
+    }
+  }
+
+  .icon {
+    color: $primary-color;
+  }
+
+  .para {
+    padding-top: 24px;
+    @include responsivemmd {
+      padding-top: 14px;
+    }
+  }
+
+  a.active {
+    font-size: 24px;
+    font-weight: 500;
+    padding: 24px 0;
+  }
+}
+
+.news {
+  @include article;
+  @include card;
+  @include mt;
+  .card {
+    padding: 0;
+    text-align: center;
+    .card__img {
+      height: 200px;
+      margin-bottom: 0;
+      @include responsivemmd {
+        height: 150px;
+      }
+    }
+    .card__body {
+      padding: 30px 24px;
+      @include nomt;
+      @include responsivemmd {
+        padding: 16px;
+      }
+      .para {
+        @include lineclamp(4);
+        margin-bottom: 16px;
+        @include noh;
+        @include responsivemmd {
+          -webkit-line-clamp: 3;
+        }
+      }
+    }
+  }
+  @include cardhr--scroll(835px);
+}
+
+@import "./component_css/footer";

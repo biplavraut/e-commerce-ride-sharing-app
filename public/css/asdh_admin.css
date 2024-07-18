@@ -1,0 +1,249 @@
+.asdh-center_image_inside_me {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+.asdh-center_image_inside_me img {
+    position: absolute;
+    width: 100%;
+}
+
+.asdh-alert-message {
+    display: none;
+    position: fixed;
+    width: auto;
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
+    opacity: 0.9;
+}
+
+.asdh-alert-message.hide-after-some-seconds {
+    display: block;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+input[disabled] {
+    background-color: rgba(211, 211, 211, 0.7) !important;
+    padding-left: 5px;
+}
+
+.error {
+    color: #1da1f2 !important;
+}
+
+.btn.btn-xs {
+    padding: 4px 8px;
+}
+
+.btn-ajax {
+    margin: 0 2px 0;
+    padding: 5px;
+}
+
+.asdh-btn-small {
+    padding: 3px 6px !important;
+    text-transform: none !important;
+}
+
+.asdh-color-777 {
+    background-color: #777777 !important;
+}
+
+.asdh-edit_and_delete {
+    text-align: center;
+}
+
+.modal.make-darker {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal .modal-dialog .modal-content .modal-header {
+    border-bottom: 1px solid #EEEEEE;
+    padding: 10px 20px;
+}
+
+.modal .modal-dialog .modal-content .modal-body {
+    padding: 10px 20px;
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 10px;
+}
+
+.modal .modal-dialog .modal-content .modal-footer {
+    padding: 0 20px 10px;
+    min-height: 35px;
+}
+
+.modal .modal-dialog .modal-content .modal-footer button {
+    padding: 5px 8px;
+}
+
+.modal .modal-dialog .modal-content .modal-footer button:first-child {
+    margin-right: 20px;
+}
+
+.navbar.theme-color-background {
+    background-color: #1da1f2;
+}
+
+.navbar .container-fluid .navbar-header .navbar-toggle .icon-bar {
+    color: #FFFFFF;
+}
+
+.navbar .container-fluid .navbar-header .navbar-brand {
+    color: #FFFFFF;
+}
+
+.navbar .container-fluid .navbar-collapse .nav .dropdown .dropdown-toggle .material-icons {
+    color: #FFFFFF;
+}
+
+.card .create-new {
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .card .create-new {
+        display: inline-block;
+        top: 35px;
+        right: 40%;
+        z-index: 10;
+    }
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu.top.open {
+    z-index: 10000;
+}
+
+.asdh-add_remove_multiple {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    cursor: pointer;
+}
+
+.asdh-add_remove_multiple.add {
+    color: #4CAF50;
+}
+
+.asdh-add_remove_multiple.remove {
+    color: #FF0000;
+}
+
+.form-group.asdh-remove_margin_padding_from_add_remove_multiple {
+    margin: 0;
+    padding-bottom: 0;
+}
+
+.mce-tinymce.mce-container.mce-panel {
+    overflow: hidden;
+}
+
+.btn-file,
+.fileinput-new.thumbnail {
+    cursor: pointer;
+}
+
+#minimizeSidebar {
+    width: 30px;
+    line-height: 20px;
+    border-radius: 50%;
+    height: 30px;
+    top: 7px;
+}
+
+#minimizeSidebar .material-icons {
+    top: -6px;
+    left: -6px;
+}
+
+.sidebar .sidebar-wrapper {
+    height: 100vh;
+    overflow-y: auto !important;
+}
+
+.sidebar .sidebar-wrapper::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar .sidebar-wrapper::-webkit-scrollbar-thumb {
+    background-color: #555555;
+    outline: 1px solid slategrey;
+    border-radius: 4px;
+}
+
+.sidebar .nav li.active>a {
+    background: #1da1f2;
+}
+
+.asdh-select .btn-group,
+.asdh-select .btn-group-vertical {
+    position: relative;
+    margin: 0 1px;
+}
+
+.select-drop-down-arrow {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    color: #AAAAAA;
+}
+
+#ajaxDataTable_processing {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #FFFFFF;
+}
+
+.my-sub-heading {
+    margin-top: 0;
+    color: #FFFFFF;
+    background: #555555;
+    display: inline-block;
+    padding: 0 15px;
+    font-weight: bold;
+    border-bottom: 3px solid #43A047;
+    text-transform: capitalize;
+}
+
+.my-divider {
+    border-bottom: 1px solid #CCCCCC;
+    margin: 40px -20px;
+}
+
+@-moz-document url-prefix() {}
+
+.show-image-on-hover:hover img {
+    display: block !important;
+    position: absolute;
+    z-index: 1;
+    width: 200px;
+    height: 200px;
+}
+
+.loader-container {
+    position: absolute;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    height: 100%;
+    z-index: 3;
+}
+
+.center-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

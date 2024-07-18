@@ -1,0 +1,558 @@
+
+
+@mixin slicknav{
+
+	.slick-arrow{
+		background-color: $primary-color;
+		border-radius: 4px;
+		z-index: 9;
+		height: 50px;
+		width: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: .3s ease;
+		overflow: hidden;
+		@include responsivemd{
+			display: none !important;
+		}
+		svg{
+			fill: #fff;
+		}
+		&:hover{
+			opacity: 1;
+
+		}
+		&:before{
+			content: none;
+		}
+		&.hide{
+			opacity: 0;
+			pointer-events: none;
+			@include transition-in;
+		}
+	}
+
+	.slick-next{
+		// right:0em;
+	}
+
+	.slick-prev{
+		// right: 200px;
+		
+	}
+}
+
+@mixin slickdots{
+	.carousel{
+		margin-bottom: 0;
+	}
+
+	.slick-slide { -webkit-transform: translate3d(0,0,0); }
+
+	.slick-dots{
+		height: 4px;
+		border-radius: 10px;
+		// position: relative;
+		background-color: rgba($primary-color, 0.08);
+		width: auto;
+		text-align: left;
+		display: flex;
+		button{
+			display: none;
+		}
+		li{
+			height: 4px;
+			width: 22px;
+			border-radius: 10px;
+			background-color: $primary-color;
+			// opacity: 0;
+			transform: scaleX(0);
+			transition: .3s linear;
+			transform-origin: 0 0;
+			transition-delay: transform .3s;
+			margin: 0;
+			&.slick-active{
+				opacity: 1;
+				transform: scaleX(1);
+				transform-origin: 100% 100%;
+
+
+
+			}
+		}
+	}
+
+	.item.slick-slide.slick-active{
+		transform: translateY(0);
+		.card__img{
+			img{
+				opacity: 1;				
+			}
+		}
+	}
+	
+	.item{
+		transform: translateY(20px);
+		transition:.3s linear;
+		.card__img{
+			background-color:$primary-color;
+			img{
+				opacity: 0;
+				transition:.3s linear;
+
+			}
+		}
+
+	}
+}
+
+
+@mixin active{
+	&.active{
+		color:#fff;
+		background-color: $red;
+		@include transition-in;
+
+	}
+}
+
+@mixin mt{
+	margin-top: 20px;
+}
+@mixin nomt{
+	margin-top: 0 !important;
+}
+@mixin noh{
+	height: auto !important;
+}
+@mixin scrollOut{
+	article{
+		@for $i from 1 through 6 {
+			&:nth-child(#{$i}) .card{
+				animation-delay:0s;
+				animation-delay: 0.2s * $i !important;
+			}
+		}
+	}
+	[data-scroll='in']{
+		opacity: 1;
+		// transform:translateY(0);
+	}
+	[data-scroll='out']{
+		opacity: 0;
+		// transform:translateY(100px);
+	}
+}
+@mixin cardhr--scroll($width){
+	.row{
+		@include responsive($width){
+			@include scrollbar;
+		}
+		&> article {
+			@include responsive( $width ){
+				max-width: 100%;
+				flex-basis: 40%;
+				scroll-snap-align: start;
+			}
+			@include responsivemmd{
+				flex-basis: 80%;
+			}
+			
+		}
+		.card{
+			@include responsive( $width ){
+				white-space: normal;
+			}
+		}
+	}
+}
+a.active{
+	color: $primary-color;
+}
+
+.card__margin{
+	@include card__margin;
+}
+.item{
+	cursor:move ;
+	outline: none !important;
+}
+.section__title{
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 1.3;
+	@include responsivemd{
+		font-size: 30px;
+	}
+	@include responsivemmd{
+		font-size: 24px;
+	}
+
+}
+
+.section__title--sm{
+	font-size: 30px;
+	color: $primary-color;
+	font-weight: 400;
+	@include responsivemd{
+		font-size: 24px;
+	}
+	@include responsivemmd{
+		font-size: 18px;
+	}
+}
+a.visibility{
+	position: absolute;
+	top: 50%;
+	right: 18px;
+	transform: translateY(-50%);
+}
+.title__description{
+	font-size: 20px;
+	margin-bottom: 35px;
+	color: $para;
+	font-weight: 400;
+	margin-bottom: 35px;
+	width: 100%;
+	max-width: 900px;
+	@include responsivemmd{
+		font-size: 16px;
+		margin-bottom: 15px;
+	}
+
+}
+
+button.white{
+	@include button;
+	background-color:#fff;
+	color: $dark;
+	&:hover{
+		color: $primary-color;
+		@include box-shadow;
+		
+	}
+	&.active{
+		@include box-shadow;
+	}
+}
+button.non-active{
+	background-color:transparent !important;
+	color: $primary-color !important;
+	border: 2px solid $primary-color !important;
+}
+
+
+@mixin tags {
+	.tags{
+		background-color: rgba($primary-color, 0.06);
+		color: $primary-color;	
+		padding: 6px 12px;
+		font-size: 14px;
+		margin: 0px 1px 12px 0;
+		border-radius: 5px;
+		font-weight: 600;
+		// transition: none;
+		&:hover{
+			box-shadow:rgba(242,101,34,0.1) 0px 3px 0px;
+		}
+		&:last-child{
+			margin: 0;
+		}
+		&:hover{
+			
+		}
+	}
+}
+
+
+@mixin card{
+	.card, .card__horizontal{
+		border:0;
+		box-shadow: 0;
+		font-size: 16px;
+		background-color: #fff;
+		position: relative;
+		z-index: 1;
+		padding:30px;
+		@include transition-in;
+		@include border-radius;
+		backface-visibility: hidden;
+		box-shadow: 0px 0px 30px rgba(29, 161, 243, 0.08);
+		@include responsivemmd{
+			padding: 20px;
+		}
+		img{
+			@include image;
+		}
+		.card__img{
+			height: 135px;
+			overflow: hidden;
+			margin-bottom: 20px;
+			position: relative;
+			@include border-radius;
+			@include transition;
+
+			svg {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				path{
+					@include transition-in;
+				}
+			}
+		}
+		.card__svg{
+			margin-bottom: 30px;
+			height: 92px;
+			width: auto;
+		}
+		.card__title{
+			font-size: 24px;
+			line-height: 1.3;
+			font-weight: 500;
+			margin: 0;
+			margin-bottom: 10px;
+			@include responsivemd{
+				font-size: 18px;	
+			}
+		}
+		.card__body{
+			padding: 0;
+			background-color: #fff;
+			@include transition-in;
+			z-index: 1;
+
+		}
+		.small__title{
+			color:rgba($para, 0.8);
+			display: block;
+			font-size: 17px;
+			font-style: normal;
+			margin-bottom: 8px;
+		}
+		time{
+			color:rgba($para, 0.5);
+			font-size: 14px;
+		}
+		
+		button{
+			@include button;
+		}
+		.para{
+			color: rgba(76, 77, 79, 0.8);
+			font-size: 16px;
+			@include transition-in;
+			height: 72px;
+			overflow: hidden;
+
+		}
+
+		.readmore{
+			margin-bottom: 0;
+			opacity: 1;
+			visibility: visible;
+			transform:scale(1);
+			@include transition;
+		}
+		&:hover{
+			// @include box-shadow;
+			@include transition-out;
+			.para{
+				@include transition-in;
+				height: 170px;
+				@incldue lineclamp(6);
+			}
+			.card__body{
+				margin-top: -20px;
+				// transform: translateY(-40px);
+			}
+			.readmore{
+				opacity: 0;
+				transform-origin: scale(0);
+				font-size: 0;
+				visibility: hidden;
+			}
+
+			
+		}
+		
+	}
+	
+}
+
+
+
+@mixin article{
+	.row{
+		margin: 0 -10px;
+		margin-bottom: 15px;
+		&> article{
+			padding: 0 10px;
+		}
+	}
+}
+.price {
+	color:#ff4c4c;
+	font-weight: 700;
+}
+.title__wrapper{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	.section__title{
+		margin-bottom: 0 !important;
+	}
+}
+.text__wrapper.center{
+	width: 100%;
+	max-width: 650px;
+	text-align: center;
+	margin: auto;
+	.title__description{
+		color: $dark;
+	}
+}
+
+@mixin card-hr{
+	.card__hr{
+		flex-direction: row;
+		.card__img{
+			height: auto;
+			overflow: hidden;
+			width: 50px;
+			margin-right: 2em;
+			margin-bottom: 0;
+			min-width: 50px;
+			border-radius: 0;
+			@include responsivemmd{
+				// height: 100px;
+				// width: 100px;
+				margin-right: 1em;
+			}
+			@include responsive(360px){
+				// height: 70px;
+				// width: 70px;
+				margin-right: 10px;
+			}
+
+
+		}
+		.card__title{
+			margin: 0 !important;
+			@include responsivemd{
+				width: 100%;
+			}
+		}
+		.price{
+			margin: 0 !important;
+		}
+		.card__body {
+			text-align: left;
+			flex-grow: 2;
+			// width: calc(100% - 100px);
+			@include responsivemd{
+				flex-wrap: wrap;
+
+			}
+			@include responsive(360px){
+				font-size: 12px;
+			}
+			.qty{
+				@include responsivemd{
+					margin-right: 0;
+				}
+			}
+			.qty button, .qty .form-control{
+				@include responsivemd{
+					width: 50px;
+					height: 50px;
+
+				}
+				@include responsivesm{
+					width: 30px;
+					height: 30px;
+					line-height: 1;
+				}
+			}
+		}
+		i{
+			vertical-align: middle;
+			columns: $lite;
+		}
+	}
+}
+
+.para{
+	line-height: 1.5;
+	font-size: 18px;
+	margin-bottom: 0;
+	color: $para;
+	@include responsivesm{
+		font-size: 16px;	
+	}
+}
+.text__active{
+	color: $primary-color;
+}
+.text-muted{
+	color: #A5A5A5 !important;
+}
+
+@mixin dur{
+	.duration{
+		background-color: $para;
+		color: #fff;
+		position: absolute;
+		right: 0;
+		bottom:0;
+		font-size: 13px;
+		border-radius:5px 0 0 0;
+		padding: 0px 8px;
+		line-height: 1.6;
+	}
+}
+
+.download__app{
+	display: flex;
+	justify-content: center;
+	margin: 1em 0;
+	&> aside{
+		padding: 0 16px;
+	}
+	.card__title {
+		font-size: 24px;
+		line-height: 1.3;
+		font-weight: 500;
+		text-align: center;
+		@include responsivemd{
+			font-size: 20px;	
+		}
+		@include responsivemmd{
+			font-size: 18px;
+			text-align: left;	
+		}
+	}
+	img{
+		height: 40px;
+		width: auto;
+		border-radius: 3px;
+		margin-right: 10px;
+		@include responsivemmd{
+			height: auto;
+			width: 110px;
+			border-radius: 3px;
+			margin-right: 10px;
+			margin: 2px;
+		}
+	}
+	.download__button {
+		@include responsivemmd{
+			justify-content: flex-start !important;
+		}
+	}
+}
+
+

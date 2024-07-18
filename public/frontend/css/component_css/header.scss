@@ -1,0 +1,155 @@
+@import '../custom';
+@import './component';
+
+.form-control[readonly] {
+	background-color: transparent;
+}
+
+
+// main menu
+header{	
+	z-index: 99;
+	font-size: 17px;
+	background-color: #fff;
+	font-weight: 500;
+	box-shadow: 0px 5px 20px rgba(78, 78, 78, 0.05);
+	position:fixed;
+	width: 100%;
+	top:0;
+	left: 0;
+	.nav{
+		align-items: center;
+		@include responsivemmd{
+			justify-content: space-between;
+		}
+	}
+	
+	.section__rule{
+		padding: 20px 0;
+		@include responsivemmd{
+			padding: 10px 0;
+		}
+	}
+	.logo img{
+		height: 60px;
+		@include responsivemd{
+			height: 40px;
+		}
+	}
+	
+	button{
+		@include button;	
+	}
+
+
+	.nav__item{
+		padding-left: 30px;
+
+	}
+	a.nav__link:hover, a.nav__link:focus-within {
+		color: $primary-color;
+		svg{
+			path{
+				fill:$primary-color;
+			}
+		}
+	}
+	.dropdown-menu{
+		top:calc(100% - 3px);
+		left:auto;
+		right: 0px;
+	}
+	.nav__item__logo{
+		position: fixed;
+		@include responsivemd{
+			position: relative;
+		}
+		@include responsivemmd{
+			width: 100%;
+			margin-bottom: 10px;
+		}
+	}
+	
+}
+
+.primary-header{
+	@extend header;
+	box-shadow:none !important;
+	position: relative;
+	background-color: transparent;
+	background-image: linear-gradient(to right, transparent 30%, white 30%);
+	@include responsivemd{
+		position: sticky;
+		top: 0px;
+		background-color: #fff;
+		@include responsivemmd{
+			top: -55px;
+		}
+	}
+	.hamburger-menu{
+		@include responsivemin(840px){
+			display: none;
+		}
+		a{
+			display: flex;
+			span{
+				font-size: 38px;
+				@include transition-in;
+			}
+			.hide{
+				transform-origin: center;
+				transform: scale(0);
+				font-size: 0;
+
+			}
+			
+		}
+	}
+
+	
+	.nav__item.ml-auto {
+		@include responsivemmd{
+			margin-left: 0 !important;
+			padding-left: 0;
+		}
+	}
+
+}
+
+.secondary-header{
+	@include responsivemd{
+		position: fixed;
+		top: 0;
+		height: 100vh;
+		width: 380px;
+		left: -380px;
+		z-index: 999;
+		max-width: calc(100% - 100px);
+		@include transition-in;
+		overflow-y: scroll;
+		&.active{
+			left: 0;
+		}
+	}
+	.nav{
+		@include responsivemd{
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+	.nav__item{
+		@include responsivemd{
+			padding: 12px;
+			margin: 0 !important;
+			@include responsivemmd{
+				padding: 0 12px;
+			}
+		}
+
+		.nav__link {
+			@include responsivemd{
+				padding: 14px;
+			}
+		}
+	}
+}

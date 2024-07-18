@@ -1,0 +1,548 @@
+@import './component_css/othercsscomp';
+
+.screen .absolute__content{
+	top: 50% !important; 
+}
+
+.form-page{
+	.form-group{
+		position: relative;
+	}
+	.form-control, select{
+		@include input;
+		width: 100%;
+		padding:0px 20px;
+		background-color: #fff;
+	}
+	button{
+		@include button;
+		@include card__margin;
+	}
+	label{
+		width: 100%;
+		text-align: left;
+	}
+	form{
+		button{
+			@include responsivemmd{
+				width: 100%;
+			}
+
+		}
+	}
+	.form-group {
+		@include responsivemmd{
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
+.signin-page{
+
+	&+ footer{
+		display: none;
+
+	}
+
+	.screen{ 
+		// padding: 60px;
+		min-height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.item {
+			min-height: 100vh;
+			width: 100%;
+			overflow: hidden;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-color: $primary-color !important;
+			max-height: none !important;
+			img{
+				mix-blend-mode: multiply;
+				opacity: 0.4;
+			}
+
+		}
+		.absolute__content{
+			max-width: 600px;
+			position:relative;
+			top: 0;
+			left: 0;
+			transform: none;
+			margin: 0 auto;
+			padding: 60px 0;
+			width: 90%;
+			@include responsivemd{
+				padding: 30px 0;
+			}
+
+
+		}
+		.text__wrapper {
+			background-color: #fff;
+			padding: 60px;
+			@include border-radius;
+			@include responsivemmd{
+				padding: 30px;
+			}
+			.nav{
+				@include card__margin;
+				@include responsivemmd{
+					@include scrollbar;
+					margin-bottom: 20px;
+					font-size: 18px;
+				}
+				.nav-item{
+					padding-right: 30px;
+					@include responsivemmd{
+						padding-right: 10px;
+					}
+				}
+				.nav-link {
+					background-color: transparent;
+					border: 0;
+					border-radius: 6px;
+					padding-left: 0px;
+					border-radius:0;
+					&.active{
+						color: $primary-color;
+						border-bottom: 2px solid $primary-color;
+					}
+				}
+			}
+
+		}
+	}
+	.download__app{
+		display: block;
+		label{
+			opacity: 0.5;
+			font-size: 13px;
+			display: flex;
+			position: relative;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 15px;
+			&:before, &:after{
+				content: "";
+				flex-grow:2;
+				height: 1px;
+				background-color: rgba(78,78,78,0.1);
+
+
+			}
+		}
+		a{
+			width: 44px;
+			height: 44px;
+			border: 1px solid rgba(78, 78, 78, 0.1);
+			box-sizing: border-box;
+			border-radius: 5px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			svg{
+				height: 22px;
+				width: auto;
+				overflow: visible;
+			}
+		}
+		a:not(:last-child){
+			margin-right: 10px;
+		}
+		.download__button{
+			justify-content: center !important;
+		}
+	}
+
+
+}
+.signup-page{
+	.form-page button{
+		margin-bottom: 10px;
+	}
+
+	.screen {
+		.absolute__content{
+			max-width: 650px;
+			// max-height: 90vh;
+			// overflow-y: scroll;
+			// scrollbar-width: none;
+			// @include responsivemmd{
+			// 	max-height: calc(100vh - 70px);
+			// 	top: auto;
+			// 	transform: none;
+			// 	bottom: 0;
+			// 	left: 0;
+			// }
+			&::-webkit-scrollbar {
+				background: transparent; /* make scrollbar transparent */
+				-webkit-appearance: none;
+				width: 0;
+				height: 0;
+			}
+		}
+	}
+	.form-check{
+		margin-bottom: 1em;
+		padding-left: 1.25em !important;
+	}
+	.otp--wrapper{
+		display: none;
+		width: 100% !important;
+		@include otp;
+	}
+}
+// var jkdf = 'ksdjfbdbfv';
+.gogocares--form{
+	.screen {
+		.item{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	.card__intro{
+		text-align: center;
+		width: 100px;
+		margin: auto;
+		.card__img{
+			border:0;
+			padding: 0 !important;
+			border-radius:50% !important;
+			overflow: hidden;
+			margin-right: 0 ;
+			height: 90px;
+			width: 90px;
+			margin: auto;
+			position: relative;
+			margin-bottom: 20px;
+			img{
+				object-fit: cover;
+				height: 100%;
+				width: 100%;
+			}
+		}
+		input{
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+		}
+		label{
+			text-align: center;
+		}
+	}
+
+	.gogocares--form__main{
+		position: relative;
+		z-index: 1;
+		padding: 60px 0;
+		@include responsivemd{
+			padding: 24px 0;
+		}
+		.text__wrapper{
+			width: 650px;
+			margin: auto;
+			max-width: 100%;
+		}
+	}
+
+	.box__wrapper{
+		.list-group-item{
+			border:0;
+			padding: 1em 0;
+			color: $dark;
+			width: auto;
+			@include border-radius;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			border:1px solid rgba(78,78,78,0.6);
+			text-align: center;
+			width: 100%;
+			@include noselect;
+			cursor: pointer;
+			.card__img{
+				input{
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					cursor: pointer;
+				}
+				img{
+					height: 50px;
+					width: auto;
+					margin-bottom: 16px;
+					object-fit: contain;
+				}
+			}
+			label{
+				text-align: center;
+			}
+		}
+
+		.form-check{
+			padding: 0;
+			input{
+				position: absolute;
+				top: calc(50% - 1rem);
+				left: 10px;
+				margin: 0;
+				z-index: 11;
+				opacity: 0;
+				&:checked + .list-group-item {
+					background-color: $primary-color;
+					border-color:$primary-color;
+					color: #fff;
+				}
+			}
+
+		}
+	}
+	.labelBoth{
+		line-height: 56px;
+		display: flex;
+		input{
+			height: 100%;
+			border: 0;
+			text-align: right;
+			flex-grow: 2;
+			background-color: transparent;
+			outline: none;
+			@include responsivemd{
+				width: 50px;
+			}
+		}
+
+		label{
+			margin: 0;
+			width: min-content;
+			white-space: nowrap;
+			padding-right: 10px;
+		}
+	}
+
+	.col-auto{
+		.form-check{
+			width: 60px;
+		} 
+	}
+	hr {
+		opacity: 1;
+		border-style: dashed;
+		border-width: 2px;
+		position: relative;
+		border-color: transparent;
+		width: 100%;
+		margin: 25px 0;
+		@include responsivemmd{
+			margin: 10px 0;
+		}
+
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			background-color: $primary-color;
+			height: 20px;
+			width: 20px;
+			left: -72px;
+			top: 50%;
+			transform: translateY(-50%);
+			border-radius: 50%;
+			@include responsivemmd{
+				left: -32px;
+
+			}
+		}
+		&::after {
+			left: calc(100% + 47px);
+			@include responsivemmd{
+				left: calc(100% + 7px);
+
+			}
+		}
+	}
+	
+	
+}
+
+.back{
+	position: absolute;
+	top: 2.1em;
+	right: -1.1em;
+	@include responsivemd{
+		top: 1.1em;
+		right: -1.1em;
+	}
+	a{
+		color: #fff !important;
+
+	}
+	button{
+		margin-bottom: 0 !important;
+		background-color:$primary-color !important;
+		transform: none;
+		height: 50px;
+		padding: 0;
+		width: 50px;
+		border-radius: 50%;
+		@include box-shadow;
+		border: 4px solid #fff;
+		@include responsivemd{
+			height: 40px;
+			width: 40px;
+			border-width:3px;
+		}
+		svg{
+			height: 40px;
+			width: auto; 
+			path{
+				fill:#fff ;
+			}
+			@include responsivemd{
+				height: 30px;
+			}
+		}
+	}
+}
+
+.terms-page{
+	.inner__screen{
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-color: $primary-color;
+		background-blend-mode: multiply;
+		background-attachment: fixed;
+		.section__title{
+			color: #fff;
+		}
+	}
+}
+
+.career-page{
+	.gogocares--form__main{
+		.section__rule{
+			background-color: #fff;
+			padding: 60px;
+			@include responsivemd{
+				padding: 40px;
+			}
+			@include responsivemmd{
+				padding: 20px;
+			}
+		}
+	}
+	select + i {
+		right: 22px;
+	}
+	.custom-file-input {
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		height: calc(1.5em + .75rem + 2px);
+		margin: 0;
+		opacity: 0;
+	}
+	.custom-file-input{
+		position: absolute;
+		left: 0;
+		height: 100%;
+	}
+	.custom-file-label {
+		background-color: transparent;
+		border: 0;
+		height: 100%;
+		cursor: pointer;
+		display: flex !important;
+		@include lineclamp(1);
+		// font-size: 14px;
+		align-items: center;
+		padding: 0 25px;
+		&:after {
+			content: none !important;
+		}
+	}
+	
+	.upload--pp--label.custom-file-label{
+		padding-left: 100px;
+	}
+	.ppImage__label{
+		height: 45px;
+		width: 45px;
+		border-radius:50%;
+		object-fit: cover;
+		transform: translateY(4px);
+	}
+	
+	.gogocares--form__main{
+		text-align: left;
+		.form-row{
+			margin-right: -15px;
+			margin-left: -15px;
+			@include responsivemmd{
+				margin-right: -6px;
+				margin-left: -6px;
+			}
+
+			& > [class*="col-"] {
+				padding-right: 15px;
+				padding-left: 15px;
+				margin-bottom: 30px;
+				@include responsivemmd{
+					margin-bottom: 12px;
+				}
+			} 
+		}
+		.section__title--sm{
+			margin-bottom: 25px;
+			font-size: 24px;
+			@include responsivemmd{
+				font-size: 18px;
+			}
+		}
+		.section__title , .section__title--sm{
+			text-align: left;
+		}
+		.addEducation{
+			svg{
+				height: 24px;
+				width: auto;
+			}
+		}
+	}
+
+	button{
+		min-width: 20%;
+	}
+
+	button.prev{
+		background-color: #e6e6e6;
+		color: #a9a9a9;
+		width: auto;
+		display: none;
+		height: 100% !important;
+		margin-right: 1em;
+	}
+
+	// steps
+	.steps{
+		width: 100% !important;
+		&:not(.active){
+			display: none;
+
+		}
+	}
+
+
+}
